@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  default:
+    desc: List all tasks
+    aliases:
+      - list
+    cmd: task -l
+
+  section:
+    desc: List section
+    silent: true
+    cmds:
+      - grep -r -A1 '^/\*' | grep -v '/\*' | grep -v '\-\-' | sort
